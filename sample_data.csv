@@ -1,0 +1,11 @@
+Age,Experience,Salary,Department,City,Purchased
+22,1,35000,IT,Karachi,0
+25,2,45000,HR,Lahore,0
+28,4,60000,IT,Karachi,1
+31,6,75000,Finance,Islamabad,1
+35,9,90000,IT,Lahore,1
+40,12,110000,Finance,Karachi,1
+24,1,40000,HR,Islamabad,0
+29,5,65000,Marketing,Karachi,1
+33,7,80000,Marketing,Lahore,1
+27,3,52000,IT,Islamabad,0
