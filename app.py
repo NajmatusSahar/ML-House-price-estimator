@@ -9,10 +9,6 @@ from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 
-# ============================================================
-# PAGE CONFIG
-# ============================================================
-
 st.set_page_config(
     page_title="AI Housing Price Estimator",
     page_icon="■",
@@ -20,10 +16,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-
-# ============================================================
-# PROFESSIONAL CSS
-# ============================================================
 
 st.markdown("""
 <style>
@@ -100,10 +92,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ============================================================
-# DATA
-# ============================================================
-
 @st.cache_data
 def load_dataset():
     data = {
@@ -161,11 +149,6 @@ FEATURES = [
 ]
 
 TARGET = "price"
-
-
-# ============================================================
-# MODEL TRAINING
-# ============================================================
 
 @st.cache_resource
 def train_models(test_size, random_state, ridge_alpha, lasso_alpha):
@@ -229,10 +212,6 @@ def train_models(test_size, random_state, ridge_alpha, lasso_alpha):
     )
 
 
-# ============================================================
-# SIDEBAR SETTINGS
-# ============================================================
-
 st.sidebar.title("⚙ Model Controls")
 
 test_percentage = st.sidebar.slider(
@@ -276,9 +255,6 @@ st.sidebar.info(
 )
 
 
-# ============================================================
-# TRAIN
-# ============================================================
 
 (
     models,
@@ -302,9 +278,6 @@ best_model_name = best_row["Model"]
 best_r2 = best_row["R² Score"]
 
 
-# ============================================================
-# HERO
-# ============================================================
 
 st.markdown("""
 <div class="hero">
@@ -317,9 +290,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ============================================================
-# OVERVIEW KPIs
-# ============================================================
 
 st.markdown(
     '<div class="section-title">• Model Overview</div>',
@@ -335,9 +305,6 @@ c4.metric("Testing Rows", len(X_test))
 c5.metric("Best R²", f"{best_r2:.3f}")
 
 
-# ============================================================
-# TABS
-# ============================================================
 
 tab_predict, tab_performance, tab_coefficients, tab_data, tab_about = st.tabs(
     [
@@ -349,10 +316,6 @@ tab_predict, tab_performance, tab_coefficients, tab_data, tab_about = st.tabs(
     ]
 )
 
-
-# ============================================================
-# PREDICTION TAB
-# ============================================================
 
 with tab_predict:
 
@@ -486,9 +449,6 @@ with tab_predict:
         )
 
 
-# ============================================================
-# PERFORMANCE TAB
-# ============================================================
 
 with tab_performance:
 
@@ -637,10 +597,6 @@ with tab_performance:
         mime="text/csv"
     )
 
-
-# ============================================================
-# COEFFICIENT TAB
-# ============================================================
 
 with tab_coefficients:
 
