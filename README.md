@@ -80,7 +80,7 @@ git init
 git add .
 git commit -m "Week 3 Housing Price Estimator"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/ml-week3-housing-price-estimator.git
+git remote add origin https://github.com/NajmatusSahar/ML-House-price-estimator
 git push -u origin main
 ```
 
